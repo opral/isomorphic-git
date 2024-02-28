@@ -1,10 +1,16 @@
 export const worthWalking = (filepath, root) => {
-  if (filepath === '.' || root == null || root.length === 0 || root === '.') {
+  if (
+    filepath === '.' ||
+    root == null ||
+    root.length === 0 ||
+    root === '.' ||
+    root === filepath
+  ) {
     return true
   }
-  if (root.length >= filepath.length) {
-    return root.startsWith(filepath)
+  if (root.length > filepath.length) {
+    return root.startsWith(filepath + '/')
   } else {
-    return filepath.startsWith(root)
+    return filepath.startsWith(root + '/')
   }
 }
