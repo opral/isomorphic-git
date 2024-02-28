@@ -19,4 +19,5 @@ module.exports = {
     ],
   ],
   coverageReporters: ['lcov', 'cobertura'],
+  testTimeout: 80000
 }

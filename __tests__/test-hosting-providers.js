@@ -15,7 +15,8 @@ const reverse = t =>
     .reverse()
     .join('')
 
-describe('Hosting Providers', () => {
+// FIXME: repo not available anymore
+describe.skip('Hosting Providers', () => {
   describe('AWS CodeCommit', () => {
     // These HTTPS Git credentials for AWS CodeCommit are for IAM user arn:aws:iam::260687965765:user/tester
     // which only has git access to the test repo:

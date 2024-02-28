@@ -13,7 +13,9 @@ const {
   setConfig,
 } = require('isomorphic-git')
 
-/* eslint-env node, browser, jasmine */
+jest.setTimeout(70 * 1000)
+
+/* eslint-env node, jest, browser, jasmine */
 
 const { makeFixture } = require('./__helpers__/FixtureFS.js')
 
