@@ -69,6 +69,62 @@ import { writeTag } from './api/writeTag.js'
 import { writeTree } from './api/writeTree.js'
 import * as Errors from './errors/index.js'
 
+// BEGIN >>> export of internal api - this is needed to rewrite functions like checkout
+import { listCommitsAndTags as _listCommitsAndTags } from './commands/listCommitsAndTags'
+import { listObjects as _listObjects } from './commands/listObjects'
+import { _pack } from './commands/pack'
+import { uploadPack as _uploadPack } from './commands/uploadPack'
+import { GitConfigManager as _GitConfigManager } from './managers/GitConfigManager'
+import { GitIgnoreManager as _GitIgnoreManager } from './managers/GitIgnoreManager'
+import { GitIndexManager as _GitIndexManager } from './managers/GitIndexManager'
+import { GitRefManager as _GitRefManager } from './managers/GitRefManager'
+import { GitRemoteHTTP as _GitRemoteHTTP } from './managers/GitRemoteHTTP'
+import { GitRemoteManager as _GitRemoteManager } from './managers/GitRemoteManager'
+import { GitShallowManager as _GitShallowManager } from './managers/GitShallowManager'
+import { FileSystem as _FileSystem } from './models/FileSystem'
+import { GitAnnotatedTag as _GitAnnotatedTag } from './models/GitAnnotatedTag'
+import { GitCommit as _GitCommit } from './models/GitCommit'
+import { GitConfig as _GitConfig } from './models/GitConfig'
+import { GitIndex as _GitIndex } from './models/GitIndex'
+import { GitObject as _GitObject } from './models/GitObject'
+import { GitPackIndex as _GitPackIndex } from './models/GitPackIndex'
+import { GitPktLine as _GitPktLine } from './models/GitPktLine'
+import { GitRefSpec as _GitRefSpec } from './models/GitRefSpec'
+import { GitRefSpecSet as _GitRefSpecSet } from './models/GitRefSpecSet'
+import { GitSideBand as _GitSideBand } from './models/GitSideBand'
+import { GitTree as _GitTree } from './models/GitTree'
+import { _readObject } from './storage/readObject'
+// we keep keep the original order from internal-apis.js
+// eslint-disable-next-line import/order
+import { _writeObject } from './storage/writeObject'
+import { readObjectPacked as _readObjectPacked } from './storage/readObjectPacked'
+import { calculateBasicAuthHeader as _calculateBasicAuthHeader } from './utils/calculateBasicAuthHeader'
+import { collect as _collect } from './utils/collect'
+import { comparePath as _comparePath } from './utils/comparePath'
+import { flatFileListToDirectoryStructure as _flatFileListToDirectoryStructure } from './utils/flatFileListToDirectoryStructure'
+import { isBinary as _isBinary } from './utils/isBinary'
+import { join as _join } from './utils/join'
+import { mergeFile as _mergeFile } from './utils/mergeFile'
+import { mergeTree as _mergeTree } from './utils/mergeTree'
+import { modified as _modified } from './utils/modified'
+import { padHex as _padHex } from './utils/padHex'
+import { path as _path } from './utils/path'
+import { pkg as _pkg } from './utils/pkg'
+import { resolveTree as _resolveTree } from './utils/resolveTree'
+import { shasum as _shasum } from './utils/shasum'
+import { sleep as _sleep } from './utils/sleep'
+import { GitWalkSymbol as _GitWalkSymbol } from './utils/symbols'
+import { parseReceivePackResponse as _parseReceivePackResponse } from './wire/parseReceivePackResponse'
+import { parseRefsAdResponse as _parseRefsAdResponse } from './wire/parseRefsAdResponse'
+// we keep keep the original order from internal-apis.js
+// eslint-disable-next-line import/order
+import { parseUploadPackResponse as _parseUploadPackResponse } from './wire/parseUploadPackResponse'
+import { parseUploadPackRequest as _parseUploadPackRequest } from './wire/parseUploadPackRequest'
+import { writeReceivePackRequest as _writeReceivePackRequest } from './wire/writeReceivePackRequest'
+import { writeRefsAdResponse as _writeRefsAdResponse } from './wire/writeRefsAdResponse'
+import { writeUploadPackRequest as _writeUploadPackRequest } from './wire/writeUploadPackRequest'
+// END >>> export of internal api - this is needed to rewrite functions like checkout
+
 // named exports
 export {
   Errors,
@@ -139,6 +195,56 @@ export {
   writeRef,
   writeTag,
   writeTree,
+  // internals
+  _listCommitsAndTags,
+  _listObjects,
+  _pack,
+  _uploadPack,
+  _GitConfigManager,
+  _GitIgnoreManager,
+  _GitIndexManager,
+  _GitRefManager,
+  _GitRemoteHTTP,
+  _GitRemoteManager,
+  _GitShallowManager,
+  _FileSystem,
+  _GitAnnotatedTag,
+  _GitCommit,
+  _GitConfig,
+  _GitIndex,
+  _GitObject,
+  _GitPackIndex,
+  _GitPktLine,
+  _GitRefSpec,
+  _GitRefSpecSet,
+  _GitSideBand,
+  _GitTree,
+  _readObject,
+  _writeObject,
+  _readObjectPacked,
+  _calculateBasicAuthHeader,
+  _collect,
+  _comparePath,
+  _flatFileListToDirectoryStructure,
+  _isBinary,
+  _join,
+  _mergeFile,
+  _mergeTree,
+  _modified,
+  _padHex,
+  _path,
+  _pkg,
+  _resolveTree,
+  _shasum,
+  _sleep,
+  _GitWalkSymbol,
+  _parseReceivePackResponse,
+  _parseRefsAdResponse,
+  _parseUploadPackResponse,
+  _parseUploadPackRequest,
+  _writeReceivePackRequest,
+  _writeRefsAdResponse,
+  _writeUploadPackRequest,
 }
 
 // default export
