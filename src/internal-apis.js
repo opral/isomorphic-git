@@ -1,5 +1,10 @@
 import * as Errors from './errors/index.js'
+import * as Utils from './utils/index.js'
+export { Utils }
 export { Errors }
+
+export * from './commands/types'
+export * from './commands/walk.js'
 
 export * from './commands/listCommitsAndTags'
 export * from './commands/listObjects'
@@ -41,7 +46,7 @@ export * from './utils/mergeFile'
 export * from './utils/mergeTree'
 export * from './utils/modified'
 export * from './utils/padHex'
-export * from './utils/path'
+// export * from './utils/path'
 export * from './utils/pkg'
 export * from './utils/resolveTree'
 export * from './utils/shasum'
