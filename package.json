@@ -12,7 +12,7 @@
   },
   "sideEffects": false,
   "engines": {
-    "node": ">=12"
+    "node": "16"
   },
   "scripts": {
     "start": "nps",
@@ -63,10 +63,10 @@
     "simple-get": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.6.0",
-    "@babel/plugin-transform-async-to-generator": "7.5.0",
-    "@babel/preset-env": "7.5.5",
-    "@babel/runtime": "7.5.5",
+    "@babel/core": "7.24.3",
+    "@babel/plugin-transform-async-to-generator": "7.24.1",
+    "@babel/preset-env": "7.24.1",
+    "@babel/runtime": "7.24.1",
     "@isomorphic-git/cors-proxy": "2.7.1",
     "@isomorphic-git/lightning-fs": "^3.3.0",
     "@isomorphic-git/pgp-plugin": "0.0.7",
@@ -98,7 +98,7 @@
     "github-comment": "1.0.1",
     "inquirer": "^7.0.0",
     "jasmine-core": "^3.99.1",
-    "jest": "^27.5.1",
+    "jest": "^28",
     "jest-junit": "^15.0.0",
     "jsdoc-api": "5.0.3",
     "karma": "^6.3.18",

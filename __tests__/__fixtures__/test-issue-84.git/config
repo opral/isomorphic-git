@@ -5,7 +5,5 @@
 	symlinks = false
 	ignorecase = true
 [remote "origin"]
-	url = https://github.com/isomorphic-git/isomorphic-git.git
+	url = http://git.local/opral/isomorphic-git.git
 	#fetch = +refs/heads/*:refs/remotes/origin/*
-[http]
-  corsProxy = http://localhost:9999

@@ -11,4 +11,4 @@
 	url = git@github.com:isomorphic-git/isomorphic-git.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [http]
-  corsProxy = http://localhost:9999
+  corsProxy = http://127.0.0.1:9999

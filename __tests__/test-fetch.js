@@ -12,13 +12,8 @@ const localhost =
 
 describe('fetch', () => {
   it('fetch (from Github)', async () => {
-    const { fs, gitdir } = await makeFixture('test-fetch-cors')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+    const { fs, gitdir } = await makeFixture('test-fetch')
+
     // Smoke Test
     await fetch({
       fs,
@@ -34,14 +29,9 @@ describe('fetch', () => {
     expect(await fs.exists(`${gitdir}/refs/remotes/origin/master`)).toBe(false)
   })
 
-  it('shallow fetch (from Github)', async () => {
-    const { fs, gitdir } = await makeFixture('test-fetch-cors')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+  it('shallow fetch (from local git server)', async () => {
+    const { fs, gitdir } = await makeFixture('test-fetch')
+
     const output = []
     const progress = []
     // Test
@@ -139,13 +129,8 @@ describe('fetch', () => {
   })
 
   it('shallow fetch single commit by hash (from Github)', async () => {
-    const { fs, gitdir } = await makeFixture('test-fetch-cors')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+    const { fs, gitdir } = await makeFixture('test-fetch')
+
     // Test
     await fetch({
       fs,
@@ -162,13 +147,13 @@ describe('fetch', () => {
   })
 
   it('shallow fetch since (from Github)', async () => {
-    const { fs, gitdir } = await makeFixture('test-fetch-cors')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+    const { fs, gitdir } = await makeFixture('test-fetch')
+    // await setConfig({
+    //   fs,
+    //   gitdir,
+    //   path: 'http.corsProxy',
+    //   value: `http://${localhost}:9999`,
+    // })
     // Test
     await fetch({
       fs,
@@ -185,13 +170,13 @@ describe('fetch', () => {
   })
 
   it('shallow fetch exclude (from Github)', async () => {
-    const { fs, gitdir } = await makeFixture('test-fetch-cors')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+    const { fs, gitdir } = await makeFixture('test-fetch')
+    // await setConfig({
+    //   fs,
+    //   gitdir,
+    //   path: 'http.corsProxy',
+    //   value: `http://${localhost}:9999`,
+    // })
     // Test
     await fetch({
       fs,
@@ -208,13 +193,13 @@ describe('fetch', () => {
   })
 
   it('shallow fetch relative (from Github)', async () => {
-    const { fs, gitdir } = await makeFixture('test-fetch-cors')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+    const { fs, gitdir } = await makeFixture('test-fetch')
+    // await setConfig({
+    //   fs,
+    //   gitdir,
+    //   path: 'http.corsProxy',
+    //   value: `http://${localhost}:9999`,
+    // })
     // Test
     await fetch({
       fs,
@@ -246,12 +231,12 @@ describe('fetch', () => {
 
   it('errors if missing refspec', async () => {
     const { fs, gitdir } = await makeFixture('test-issue-84')
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+    // await setConfig({
+    //   fs,
+    //   gitdir,
+    //   path: 'http.corsProxy',
+    //   value: `http://${localhost}:9999`,
+    // })
     // Test
     let err = null
     try {

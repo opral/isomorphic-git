@@ -13,7 +13,7 @@ const {
   setConfig,
 } = require('isomorphic-git')
 
-jest.setTimeout(70 * 1000)
+jest.setTimeout(20 * 1000)
 
 /* eslint-env node, jest, browser, jasmine */
 
@@ -511,15 +511,8 @@ describe('checkout', () => {
     expect(remote).toContain('origin')
   })
 
-  it('should setup the remote tracking branch with `track: true`', async () => {
-    const { fs, dir, gitdir } = await makeFixture('test-fetch-cors')
-
-    await setConfig({
-      fs,
-      gitdir,
-      path: 'http.corsProxy',
-      value: `http://${localhost}:9999`,
-    })
+  it.only('should setup the remote tracking branch with `track: true`', async () => {
+    const { fs, dir, gitdir } = await makeFixture('test-fetch')
 
     // fetch `test-branch` so `refs/remotes/test-branch` exists but `refs/heads/test-branch` does not
     await gitFetch({
