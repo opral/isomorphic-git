@@ -73,6 +73,7 @@ import { listCommitsAndTags as _listCommitsAndTags } from './commands/listCommit
 import { listObjects as _listObjects } from './commands/listObjects'
 import { _pack } from './commands/pack'
 import { uploadPack as _uploadPack } from './commands/uploadPack'
+import { _walk } from './commands/walk.js'
 // ERRORS
 import * as Errors from './errors/index.js'
 // MANAGERs
@@ -267,6 +268,7 @@ export {
   tag,
   version,
   walk,
+  _walk,
   writeBlob,
   writeCommit,
   writeObject,
@@ -457,6 +459,7 @@ export default {
   tag,
   version,
   walk,
+  _walk,
   writeBlob,
   writeCommit,
   writeObject,
